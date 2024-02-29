@@ -134,7 +134,7 @@ public class List {
         if (index > size || index < 0)
             throw new IndexOutOfBoundsException("index is out of bounds");
         else {
-            while (j < index && current != null) {
+            while (j < index) {
                 current = current.next;
                 j++;
             }
