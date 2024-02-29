@@ -128,19 +128,6 @@ public class LanguageModel {
 
     public static void main(String[] args) {
         // Your code goes here
-        int winLength = Integer.parseInt(args[0]);
-        String initialText = args[1];
-        int r = Integer.parseInt(args[2]);
-        Boolean check = args[3].equals("random");
-        String file = args[4];
 
-        LanguageModel model;
-        if (check)
-            model = new LanguageModel(winLength);
-        else
-            model = new LanguageModel(winLength, 20);
-        model.train(file);
-
-        System.out.println(model.generate(initialText, r));
     }
 }
