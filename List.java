@@ -89,8 +89,15 @@ public class List {
         // Your code goes here
         if (indexOf(chr) == -1)
             addFirst(chr);
-        else
-            get(indexOf(chr)).count++;
+        else {
+            while (current != null) {
+                if (current.cp.equals(chr)) {
+                    current.cp.count++;
+                }
+                current = current.next;
+            }
+        }
+
     }
 
     /**
@@ -127,10 +134,11 @@ public class List {
         Node current = first;
         if (index > size || index < 0)
             throw new IndexOutOfBoundsException("index is out of bounds");
-
-        while (j < index && current != null) {
-            current = current.next;
-            j++;
+        else {
+            while (j < index && current != null) {
+                current = current.next;
+                j++;
+            }
         }
         return current.cp;
     }
