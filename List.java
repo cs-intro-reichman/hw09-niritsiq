@@ -38,8 +38,8 @@ public class List {
      */
     public void addFirst(char chr) {
         // Your code goes here
-        CharData newNode = new CharData(chr);
-        Node newNode = new Node(chr);
+        CharData c = new CharData(chr);
+        Node newNode = new Node(c);
         newNode.next = first; // new node -> first node
         first = newNode; // first -> new node
         size++;
@@ -51,13 +51,11 @@ public class List {
         if (size == 0)
             return "()";
         String str = "(";
-        // Starting from the first node, iterates through this list
         Node current = first;
         while (current != null) {
-            str += current.value + " ";
+            str += current.cp + " ";
             current = current.next;
         }
-
         return str.substring(0, str.length() - 1) + ")";
     }
 
