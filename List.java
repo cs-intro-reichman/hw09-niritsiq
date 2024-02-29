@@ -69,7 +69,7 @@ public class List {
         Node current = first;
         int index = 0;
         while (current != null) {
-            if (current.value == chr) {
+            if (current.cp.chr == chr) {
                 return index;
             }
             current = current.next;
