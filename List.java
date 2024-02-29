@@ -77,7 +77,7 @@ public class List {
             current = current.next;
             index++;
         }
-        return -1; // Value not found
+        return -1;
     }
 
     /**
@@ -102,18 +102,16 @@ public class List {
         // Your code goes here
         Node prev = null;
         Node current = first;
-        while (current != null && current.value != chr) {
+        if (indexOf(chr) == -1)
+            return false;
+        while (!current.cp.equals(chr) && (current != null)) {
             prev = current;
             current = current.next;
         }
-        if (current == null)
-            return false;
-
-        if (prev == null) {
+        if (prev == null)
             first = first.next;
-        } else {
+        else
             prev.next = current.next;
-        }
         size--;
         return true;
     }
@@ -131,7 +129,7 @@ public class List {
             throw new IndexOutOfBoundsException("index is out of bounds");
 
         while (j < index && current != null) {
-            curr = current.next;
+            current = current.next;
             j++;
         }
         return current.cp;
