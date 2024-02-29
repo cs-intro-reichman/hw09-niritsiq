@@ -85,6 +85,7 @@ public class List {
      */
     public void update(char chr) {
         // Your code goes here
+        Node current = first;
         if (indexOf(chr) == -1)
             addFirst(chr);
         else {
